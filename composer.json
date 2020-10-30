@@ -1,0 +1,21 @@
+{
+    "name": "reade/fetch-fans",
+    "description": "fetch nickname&fans count in bilibili|douyin|redbook",
+    "type": "linrary",
+    "require": {
+        "guzzlehttp/guzzle": "^7.2",
+        "paquettg/php-html-parser": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "reader",
+            "email": "lrd0421@163.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "FetchFans\\": "src/"
+        }
+    }
+}
