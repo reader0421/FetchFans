@@ -3,7 +3,7 @@
     "description": "fetch nickname&fans count in bilibili|douyin|redbook",
     "type": "linrary",
     "require": {
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^6.2",
         "paquettg/php-html-parser": "^3.0"
     },
     "authors": [
