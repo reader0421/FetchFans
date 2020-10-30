@@ -1,5 +1,5 @@
 {
-    "name": "reade/fetch-fans",
+    "name": "reader/fetch-fans",
     "description": "fetch nickname&fans count in bilibili|douyin|redbook",
     "type": "linrary",
     "require": {
