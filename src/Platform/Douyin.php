@@ -15,6 +15,8 @@ class Douyin implements Base
 
     protected $fans_count = 0;
 
+    protected $like_count = 0;
+
     public function getFansCount()
     {
         return $this->fans_count;
@@ -75,6 +77,17 @@ class Douyin implements Base
             throw new Exception('douyin get follower_count error');
         }
         $this->fans_count = Util::numStr2Int($res['user_info']['follower_count']);
+
+        if(!isset($res['user_info']['total_favorited'])){
+            throw new Exception('douyin get total_favorited error');
+        }
+        $this->like_count = Util::numStr2Int($res['user_info']['total_favorited']);
+
         return true;
+    }
+
+    public function getLikeCount()
+    {
+        return $this->like_count;
     }
 }

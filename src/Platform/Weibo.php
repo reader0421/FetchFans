@@ -53,4 +53,9 @@ class Weibo implements Base
     {
         return $this->nickname;
     }
+
+    public function getLikeCount()
+    {
+        return 0;
+    }
 }

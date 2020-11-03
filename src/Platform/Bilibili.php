@@ -73,4 +73,9 @@ class Bilibili implements Base
 
         return true;
     }
+
+    public function getLikeCount()
+    {
+        return 0;
+    }
 }
