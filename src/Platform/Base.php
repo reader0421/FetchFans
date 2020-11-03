@@ -24,4 +24,10 @@ interface Base
      * @return int
      */
     public function getFansCount();
+
+    /**
+     * 获取点赞数
+     * @return mixed
+     */
+    public function getLikeCount();
 }

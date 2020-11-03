@@ -16,7 +16,7 @@ $weinbo_url = 'https://weibo.com/u/3868613846';
 //有可能还会有未知错误，用try catch走一下
 //https 的连接 需要 curl 证书
 try {
-    $FetchFans = new Fetch($weinbo_url, new Weibo());
+    $FetchFans = new Fetch($douyin_share_url, new Douyin());
     $res = $FetchFans->fetch();
     if (false === $res) {
         throw new Exception($FetchFans->getError());
@@ -24,6 +24,8 @@ try {
     echo 'nickname:' . $FetchFans->getNickName();
     echo "\r\n";
     echo 'fans count:' . $FetchFans->getFansCount();
+    echo "\r\n";
+    echo 'like count:' . $FetchFans->getLikeCount();
 
 } catch (Exception $e) {
     echo 'fetch fail:' . urldecode($e->getMessage());

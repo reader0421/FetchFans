@@ -19,6 +19,12 @@ class Fetch
     protected $fans_count = 0;
 
     /**
+     * 抖音点赞数，小红书赞藏数
+     * @var int
+     */
+    protected $like_count = 0;
+
+    /**
      * 目标的分享链接
      * @var string
      */
@@ -54,6 +60,7 @@ class Fetch
             $this->platform->fetch($this->share_url);
             $this->fans_count  = $this->platform->getFansCount();
             $this->nickname = $this->platform->getNickname();
+            $this->like_count = $this->platform->getLikeCount();
             return true;
 
         }catch (Exception $e){
@@ -70,6 +77,11 @@ class Fetch
     public function getFansCount()
     {
         return $this->fans_count;
+    }
+
+    public function getLikeCount()
+    {
+        return $this->like_count;
     }
 
     public function getError()

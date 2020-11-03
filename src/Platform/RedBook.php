@@ -14,6 +14,8 @@ class RedBook implements Base
 
     protected $fans_count = 0;
 
+    protected $like_count = 0;
+
     /**
      * @inheritDoc
      */
@@ -45,6 +47,15 @@ class RedBook implements Base
             throw new Exception('redbook get fans error');
         }
         $this->fans_count = Util::numStr2Int($fans);
+
+        //like
+        $div3 = $dom->find('.info-number')[2];
+        $like = $div3->text;
+        //有可能为0
+        if($like === ''){
+            throw new Exception('redbook get like error');
+        }
+        $this->like_count = Util::numStr2Int($like);
         return true;
     }
 
@@ -56,5 +67,10 @@ class RedBook implements Base
     public function getNickname()
     {
         return $this->nickname;
+    }
+
+    public function getLikeCount()
+    {
+        return 0;
     }
 }
