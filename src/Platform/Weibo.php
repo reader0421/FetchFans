@@ -23,7 +23,6 @@ class Weibo implements Base
         if(empty($uid)){
             throw new Exception('error uid');
         }
-        var_dump($uid);
         $client = new Client();
         $response =  $client->get('https://m.weibo.cn/api/container/getIndex',[
             'query'=>[
